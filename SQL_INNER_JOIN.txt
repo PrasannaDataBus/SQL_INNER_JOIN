@@ -1,0 +1,29 @@
+select distinct 
+user.civility as title,
+user.firstname as first_name,
+user.lastname as last_name,
+user.job as Job,
+user.raison_sociale as Company_name,
+user.city as City,
+user.country as Country,
+user.email as Email,
+user.email1 as Email2,
+user.email2 as Email3,
+user.interest as Likes,
+user.num_user as No_user,
+order.Cost_TTC as Amount,
+order.DUE_TTC as Due,
+order.num_order as No_order,
+order.date_invoice as date,
+return_list.num_invoice as Invoice_number,
+from 
+user
+inner join order
+on order.id_user = user.id_user
+inner join 
+on return_list.id_order = order.id_order
+inner join return
+on return.id_return = return_list.id_return
+where order.id = ''
+and order.user_id = ''
+and Country not like '';
